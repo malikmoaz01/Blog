@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Smartphone , Server , Wrench , ShieldCheck , Mail, Phone, MapPin, Code, Brain, Database, Cloud, Star, ExternalLink, Menu, X, Users, Award, Briefcase, TrendingUp, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Smartphone, Server, Wrench, ShieldCheck, Mail, Phone, MapPin, Code, Brain, Database, Cloud, Star, ExternalLink, Menu, X, Users, Award, Briefcase, TrendingUp, GraduationCap } from 'lucide-react';
 import leader from '../components/1.png'
 const BlogWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,21 +103,21 @@ const BlogWebsite = () => {
     {
       degree: "Bachelor of Science - Software Engineering",
       institution: "Faculty of Computing & Information Technology (PU)",
-      period: "Nov 2021 - June 2025", 
+      period: "Nov 2021 - June 2025",
       location: "Lahore, Punjab, Pakistan",
       percentage: "81.25%"
     },
     {
       degree: "FSC - Pre Engineering",
       institution: "PGC Campus 8 (Main)",
-      period: "Aug 2019 - Nov 2021", 
+      period: "Aug 2019 - Nov 2021",
       location: "Lahore, Punjab, Pakistan",
       percentage: "99.82%"
     },
     {
       degree: "Matric - Computer Science",
       institution: "IHSC Chunian",
-      period: "Jan 2017 - July 2019", 
+      period: "Jan 2017 - July 2019",
       location: "Chunian, Pakistan",
       percentage: "91.91%"
     }
@@ -148,47 +148,47 @@ const BlogWebsite = () => {
   ];
 
   const skills = [
-  {
-    category: "Programming Languages",
-    items: ["C/C++", "Java", "JavaScript", "Python"],
-    icon: Code
-  },
-  {
-    category: "Frontend Development",
-    items: ["React", "TypeScript", "Tailwind CSS", "Bootstrap", "MUI"],
-    icon: Smartphone
-  },
-  {
-    category: "Backend Development",
-    items: ["Node.js", "Express.js", "Flask", "Django"],
-    icon: Server
-  },
-  {
-    category: "Databases",
-    items: ["MySQL", "MongoDB", "Firebase", "PostgreSQL"],
-    icon: Database
-  },
-  {
-    category: "Machine Learning",
-    items: ["TensorFlow", "CNN", "RNN", "ANN", "NumPy", "Pandas", "OpenCV"],
-    icon: Brain
-  },
-  {
-    category: "DevOps & Deployment",
-    items: ["Docker", "Railway", "Vercel", "AWS Lambda", "Render"],
-    icon: Cloud
-  },
-  {
-    category: "Version Control & Tools",
-    items: ["Git", "GitHub", "Figma", "Postman", "VS Code"],
-    icon: Wrench
-  },
-  {
-    category: "Cybersecurity Basics",
-    items: ["JWT", "OAuth2", "HTTPS", "CORS", "Helmet.js"],
-    icon: ShieldCheck
-  }
-];
+    {
+      category: "Programming Languages",
+      items: ["C/C++", "Java", "JavaScript", "Python"],
+      icon: Code
+    },
+    {
+      category: "Frontend Development",
+      items: ["React", "TypeScript", "Tailwind CSS", "Bootstrap", "MUI"],
+      icon: Smartphone
+    },
+    {
+      category: "Backend Development",
+      items: ["Node.js", "Express.js", "Flask", "Django"],
+      icon: Server
+    },
+    {
+      category: "Databases",
+      items: ["MySQL", "MongoDB", "Firebase", "PostgreSQL"],
+      icon: Database
+    },
+    {
+      category: "Machine Learning",
+      items: ["TensorFlow", "CNN", "RNN", "ANN", "NumPy", "Pandas", "OpenCV"],
+      icon: Brain
+    },
+    {
+      category: "DevOps & Deployment",
+      items: ["Docker", "Railway", "Vercel", "AWS Lambda", "Render"],
+      icon: Cloud
+    },
+    {
+      category: "Version Control & Tools",
+      items: ["Git", "GitHub", "Figma", "Postman", "VS Code"],
+      icon: Wrench
+    },
+    {
+      category: "Cybersecurity Basics",
+      items: ["JWT", "OAuth2", "HTTPS", "CORS", "Helmet.js"],
+      icon: ShieldCheck
+    }
+  ];
 
   const stats = [
     { icon: Users, label: "Happy Clients", value: clientCount, suffix: "+" },
@@ -362,7 +362,7 @@ const BlogWebsite = () => {
         </div>
       </section>
 
-      {/* About Section */} 
+      {/* About Section */}
       <section id="about" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transition-all duration-1000 ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -412,6 +412,74 @@ const BlogWebsite = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/*  Professional Experience  */}
+
+      <section id="experience" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`transition-all duration-1000 ${isVisible.experience ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+              Professional Experience
+            </h2>
+
+            <div className="space-y-10">
+
+              {/* CureMD */}
+              <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
+                <h3 className="text-2xl font-semibold text-white mb-2">Web Bootcamp Intern</h3>
+                <div className="text-yellow-400 font-medium">CureMD · Internship</div>
+                <div className="text-sm text-gray-400 mb-2">July 2025 - Present · Lahore, Punjab, Pakistan</div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {["HTML", "CSS", "JavaScript", "Angular" , "ASP.NET MVC", "C#", "Enterprise Apps"].map(skill => (
+                    <span key={skill} className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-300 text-sm">
+                  Currently working as a Web Bootcamp Intern at CureMD, where I’m gaining hands-on experience in developing enterprise-grade web applications using ASP.NET MVC and C#.
+                  I'm actively involved in front-end and back-end tasks, collaborating with senior developers to learn industry-standard practices for building scalable systems.
+                </p>
+              </div>
+
+              {/* VAST */}
+              <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
+                <h3 className="text-2xl font-semibold text-white mb-2">Full Stack Engineer</h3>
+                <div className="text-yellow-400 font-medium">VAST · Part-time</div>
+                <div className="text-sm text-gray-400 mb-2">Jan 2023 - Nov 2024 · Lahore, Punjab, Pakistan · Hybrid</div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {["MERN Stack", "Django", "MongoDB", "Node.js"].map(skill => (
+                    <span key={skill} className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-300 text-sm">
+                  Worked on multiple web applications using MERN stack and Django for backend services.
+                </p>
+              </div>
+
+              {/* UvoCorp */}
+              <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
+                <h3 className="text-2xl font-semibold text-white mb-2">Freelance Full Stack Developer</h3>
+                <div className="text-yellow-400 font-medium">UvoCorp · Freelance</div>
+                <div className="text-sm text-gray-400 mb-2">Aug 2022 - Aug 2023 · Berlin, Germany · Remote</div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {["Full Stack", "React", "REST APIs", "MySQL", "Remote Projects"].map(skill => (
+                    <span key={skill} className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-300 text-sm">
+                  Delivered full-stack freelance projects in international markets with modern technologies and clean code practices.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
