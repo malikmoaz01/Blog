@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Phone, MapPin, Code, Brain, Database, Cloud, Star, ExternalLink, Menu, X, Users, Award, Briefcase, TrendingUp } from 'lucide-react';
+import { Github, Linkedin, Smartphone , Server , Wrench , ShieldCheck , Mail, Phone, MapPin, Code, Brain, Database, Cloud, Star, ExternalLink, Menu, X, Users, Award, Briefcase, TrendingUp, GraduationCap } from 'lucide-react';
 import leader from '../components/1.png'
 const BlogWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,17 +29,16 @@ const BlogWebsite = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Counter animation for stats
   useEffect(() => {
     if (isVisible.about) {
       const clientTimer = setInterval(() => {
         setClientCount(prev => prev < 25 ? prev + 1 : 25);
       }, 80);
-      
+
       const projectTimer = setInterval(() => {
         setProjectCount(prev => prev < 30 ? prev + 1 : 30);
       }, 60);
-      
+
       const expTimer = setInterval(() => {
         setExperienceYears(prev => prev < 2 ? prev + 0.1 : 2);
       }, 100);
@@ -54,51 +53,142 @@ const BlogWebsite = () => {
 
   const projects = [
     {
-      title: "Fashnix",
-      tech: "MERN & Python",
-      description: "E-commerce website for clothing with ML-based dynamic pricing and personalized recommendations. Features admin management and user shopping experience.",
+      title: "Fashniz",
+      tech: "MERN Stack & Flask",
+      description: "E-commerce platform for clothing with ML-based dynamic pricing and personalized recommendation system. Features admin management panel and user shopping experience with AI-driven suggestions.",
       github: "https://github.com/malikmoaz01/Fashnix-FYP",
       live: "https://fashnixx.vercel.app/",
-      featured: true
+      featured: true,
+      tags: ["Machine Learning", "E-commerce", "React", "Python"]
     },
     {
-      title: "Face Insight App",
-      tech: "Django",
-      description: "Deep learning app that predicts gender, age, and skin diseases. Provides NLP-based suggestions and GPT2 integration for enhanced recommendations.",
-      github: "https://github.com/malikmoaz01/FaceInsight-Deep-Learning"
+      title: "HireGenix",
+      tech: "MERN Stack & Flask",
+      description: "Skill-based hiring platform connecting job seekers and employers. Features profile creation, skill listing, job recommendations, and candidate shortlisting based on skill matching algorithms.",
+      github: "https://github.com/malikmoaz01/hiregenix",
+      live: "https://hiregenix.vercel.app/",
+      tags: ["Job Portal", "Skill Matching", "ML", "MERN"]
     },
     {
-      title: "Insta Backend",
-      tech: "MERN",
-      description: "Instagram clone with complete backend functionality including user management, posts, likes, comments, follow system, and search.",
-      github: "https://github.com/malikmoaz01/Insta-Backend-MERN"
+      title: "Face Insight",
+      tech: "Django & Deep Learning",
+      description: "Advanced deep learning application for gender & age prediction, skin disease detection (acne, pigmentation, wrinkles). Includes NLP-based suggestions and GPT-2 integration for enhanced recommendations.",
+      github: "https://github.com/malikmoaz01/FaceInsight-App",
+      tags: ["Computer Vision", "NLP", "Deep Learning", "Healthcare"]
     },
     {
       title: "E-Restaurant",
-      tech: "MERN",
-      description: "Complete restaurant management system with customer service, staff management, financial tracking, and inventory control.",
-      github: "https://github.com/malikmoaz01/Restuarant-Reactjs"
+      tech: "MERN Stack",
+      description: "Complete restaurant management system with customer service, staff management, financial tracking, inventory control, and marketing features for comprehensive business operations.",
+      github: "https://github.com/malikmoaz01/MlkFood",
+      live: "https://malikrestuarant.vercel.app/",
+      tags: ["Restaurant Management", "MERN", "Business"]
     },
     {
       title: "Recipe Generator",
-      tech: "Django",
-      description: "ML-powered recipe generator that analyzes dish images using CNNs and provides recipe suggestions through NLP.",
-      github: "https://github.com/malikmoaz01/Recipe-Generator"
+      tech: "Django & CNN",
+      description: "ML-powered recipe generator using CNNs to analyze dish images and provide recipe suggestions through NLP. Upload an image to get personalized recipe recommendations.",
+      github: "https://github.com/malikmoaz01/Recipe-Generator",
+      tags: ["Computer Vision", "CNN", "NLP", "Food Tech"]
     },
-        {
-      title: "Invoice Generator",
-      tech: "MERN",
-      description: "The Invoice Generator is to simplify the process of creating, managing, and exporting invoices(for logistics and goods transport businesses) . ",
-      github: "https://github.com/malikmoaz01/Client-Invoice-Generator-Project"
+    {
+      title: "Mini Projects Collection",
+      tech: "Multiple Technologies",
+      description: "Comprehensive collection including IRS, Video Search Engine, OCR, Translation Agent, Recommendation Systems, Object Detection, Spam Detection, Chatbot, and more.",
+      github: "https://github.com/malikmoaz01/Mini-Projects",
+      tags: ["Various", "ML", "Web Dev", "AI"]
+    }
+  ];
+  const education = [
+    {
+      degree: "Bachelor of Science - Software Engineering",
+      institution: "Faculty of Computing & Information Technology (PU)",
+      period: "Nov 2021 - June 2025", 
+      location: "Lahore, Punjab, Pakistan",
+      percentage: "81.25%"
+    },
+    {
+      degree: "FSC - Pre Engineering",
+      institution: "PGC Campus 8 (Main)",
+      period: "Aug 2019 - Nov 2021", 
+      location: "Lahore, Punjab, Pakistan",
+      percentage: "99.82%"
+    },
+    {
+      degree: "Matric - Computer Science",
+      institution: "IHSC Chunian",
+      period: "Jan 2017 - July 2019", 
+      location: "Chunian, Pakistan",
+      percentage: "91.91%"
+    }
+  ];
+
+  const certifications = [
+    {
+      title: "Deep Learning Specialization",
+      provider: "DeepLearning.AI (Coursera)",
+      period: "Mar 2024 - June 2024",
+      grade: "A+",
+      location: "Palo Alto, California, USA"
+    },
+    {
+      title: "Backend Specialization",
+      provider: "Meta (Coursera)",
+      period: "May 2023 - Jul 2023",
+      grade: "A+",
+      location: "Menlo Park, California, USA"
+    },
+    {
+      title: "Frontend Specialization",
+      provider: "Meta (Coursera)",
+      period: "Feb 2023 - April 2023",
+      grade: "A+",
+      location: "Menlo Park, California, USA"
     }
   ];
 
   const skills = [
-    { category: "Programming", items: ["C/C++", "Java", "JavaScript", "Python"], icon: Code },
-    { category: "Machine Learning", items: ["CNN", "NLP", "TensorFlow", "NumPy"], icon: Brain },
-    { category: "Web Development", items: ["MERN", "Flask", "Django", "Next.js"], icon: Database },
-    { category: "Deployment", items: ["Docker", "Railway", "AWS", "Render"], icon: Cloud }
-  ];
+  {
+    category: "Programming Languages",
+    items: ["C/C++", "Java", "JavaScript", "Python"],
+    icon: Code
+  },
+  {
+    category: "Frontend Development",
+    items: ["React", "TypeScript", "Tailwind CSS", "Bootstrap", "MUI"],
+    icon: Smartphone
+  },
+  {
+    category: "Backend Development",
+    items: ["Node.js", "Express.js", "Flask", "Django"],
+    icon: Server
+  },
+  {
+    category: "Databases",
+    items: ["MySQL", "MongoDB", "Firebase", "PostgreSQL"],
+    icon: Database
+  },
+  {
+    category: "Machine Learning",
+    items: ["TensorFlow", "CNN", "RNN", "ANN", "NumPy", "Pandas", "OpenCV"],
+    icon: Brain
+  },
+  {
+    category: "DevOps & Deployment",
+    items: ["Docker", "Railway", "Vercel", "AWS Lambda", "Render"],
+    icon: Cloud
+  },
+  {
+    category: "Version Control & Tools",
+    items: ["Git", "GitHub", "Figma", "Postman", "VS Code"],
+    icon: Wrench
+  },
+  {
+    category: "Cybersecurity Basics",
+    items: ["JWT", "OAuth2", "HTTPS", "CORS", "Helmet.js"],
+    icon: ShieldCheck
+  }
+];
 
   const stats = [
     { icon: Users, label: "Happy Clients", value: clientCount, suffix: "+" },
@@ -120,7 +210,7 @@ const BlogWebsite = () => {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-amber-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-4000"></div>
-        
+
         {/* Floating geometric shapes */}
         <div className="absolute top-20 left-20 w-4 h-4 bg-yellow-400 transform rotate-45 animate-bounce opacity-60"></div>
         <div className="absolute top-40 right-32 w-6 h-6 bg-yellow-300 rounded-full animate-pulse opacity-40"></div>
@@ -137,16 +227,15 @@ const BlogWebsite = () => {
                 Malik Moaz
               </span>
             </div>
-            
+
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {['home', 'about', 'projects', 'skills', 'contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-yellow-500/20 hover:text-yellow-400 ${
-                      activeSection === item ? 'text-yellow-400 bg-yellow-500/20 border-b-2 border-yellow-400' : 'text-gray-300'
-                    }`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-yellow-500/20 hover:text-yellow-400 ${activeSection === item ? 'text-yellow-400 bg-yellow-500/20 border-b-2 border-yellow-400' : 'text-gray-300'
+                      }`}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </button>
@@ -192,8 +281,8 @@ const BlogWebsite = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-lg opacity-75 animate-pulse"></div>
                 <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 rounded-full blur-xl opacity-30 animate-spin slow-spin"></div>
-                <img 
-                  src= {leader}
+                <img
+                  src={leader}
                   alt="Malik Moaz"
                   className="relative w-80 h-80 rounded-full object-cover border-4 border-yellow-400 shadow-2xl hover:scale-105 transition-transform duration-300"
                 />
@@ -214,10 +303,10 @@ const BlogWebsite = () => {
                 Software Engineer
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
-                Leveraging expertise in Machine Learning and Web Development to create innovative, 
+                Leveraging expertise in Machine Learning and Web Development to create innovative,
                 data-driven applications that enhance user experiences and drive business growth.
               </p>
-              
+
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
                 <div className="flex items-center gap-2 text-gray-300 bg-gray-800/50 px-4 py-2 rounded-full">
                   <MapPin size={18} className="text-yellow-400" />
@@ -230,13 +319,13 @@ const BlogWebsite = () => {
               </div>
 
               <div className="flex gap-4 justify-center lg:justify-start">
-                <a 
+                <a
                   href="mailto:mlkmoaz01@gmail.com"
                   className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/25"
                 >
                   Get In Touch
                 </a>
-                <a 
+                <a
                   href="https://github.com/malikmoaz01"
                   className="border-2 border-yellow-500 hover:bg-yellow-500 hover:text-black text-yellow-400 hover:border-yellow-600 font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
                 >
@@ -255,7 +344,7 @@ const BlogWebsite = () => {
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <div 
+                <div
                   key={stat.label}
                   className={`text-center transition-all duration-1000 delay-${index * 200} ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 >
@@ -273,7 +362,7 @@ const BlogWebsite = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section */} 
       <section id="about" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transition-all duration-1000 ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -283,52 +372,44 @@ const BlogWebsite = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-semibold text-yellow-400 mb-6">Education</h3>
+                <h3 className="text-2xl font-semibold text-yellow-400 mb-6 flex items-center gap-3">
+                  <GraduationCap className="text-yellow-400" size={28} />
+                  Education
+                </h3>
                 <div className="space-y-6">
-                  <div className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    <h4 className="text-xl font-semibold text-white mb-2">Bachelor of Science - Software Engineering</h4>
-                    <p className="text-yellow-400 mb-2 font-medium">Faculty of Computing & IT (PU)</p>
-                    <p className="text-gray-400 mb-2">Nov 2021 – June 2025</p>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <p className="text-green-400 font-semibold">Percentage: 81.5%</p>
+                  {education.map((edu, index) => (
+                    <div key={index} className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      <h4 className="text-xl font-semibold text-white mb-2">{edu.degree}</h4>
+                      <p className="text-yellow-400 mb-2 font-medium">{edu.institution}</p>
+                      <p className="text-gray-400 mb-2">{edu.period}</p>
+                      <p className="text-gray-400 mb-2">{edu.location}</p>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <p className="text-green-400 font-semibold">Percentage: {edu.percentage}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    <h4 className="text-xl font-semibold text-white mb-2">FSC - Pre Engineering</h4>
-                    <p className="text-yellow-400 mb-2 font-medium">PGC Campus 8 (Main)</p>
-                    <p className="text-gray-400 mb-2">Jan 2019 – Nov 2021</p>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <p className="text-green-400 font-semibold">Percentage: 99.82%</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-yellow-400 mb-6">Professional Experience</h3>
-                <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-                    <h4 className="text-xl font-semibold text-white">MERN & AI Junior Developer</h4>
-                  </div>
-                  <p className="text-yellow-400 mb-2 font-medium">Vast, Lahore, Pakistan</p>
-                  <p className="text-gray-400 mb-4">August 2022 – August 2023</p>
-                  <ul className="text-gray-300 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Solution of Front End Development using ReactJS</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Solution of Backend Problems using different technologies</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Usage of Python libraries (TensorFlow, NumPy, etc.)</span>
-                    </li>
-                  </ul>
+                <h3 className="text-2xl font-semibold text-yellow-400 mb-6 flex items-center gap-3">
+                  <Award className="text-yellow-400" size={28} />
+                  Certifications
+                </h3>
+                <div className="space-y-6">
+                  {certifications.map((cert, index) => (
+                    <div key={index} className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      <h4 className="text-xl font-semibold text-white mb-2">{cert.title}</h4>
+                      <p className="text-yellow-400 mb-2 font-medium">{cert.provider}</p>
+                      <p className="text-gray-400 mb-2">{cert.period}</p>
+                      <p className="text-gray-400 mb-2">{cert.location}</p>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <p className="text-green-400 font-semibold">Grade: {cert.grade}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -346,12 +427,11 @@ const BlogWebsite = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <div 
+                <div
                   key={project.title}
-                  className={`bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10 ${
-                    project.featured ? 'md:col-span-2 lg:col-span-1 ring-2 ring-yellow-500/30' : ''
-                  }`}
-                  style={{animationDelay: `${index * 200}ms`}}
+                  className={`bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10 ${project.featured ? 'md:col-span-2 lg:col-span-1 ring-2 ring-yellow-500/30' : ''
+                    }`}
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
@@ -366,9 +446,9 @@ const BlogWebsite = () => {
                       {project.tech}
                     </div>
                     <p className="text-gray-300 mb-6 line-clamp-3">{project.description}</p>
-                    
+
                     <div className="flex gap-3">
-                      <a 
+                      <a
                         href={project.github}
                         className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-all duration-300 transform hover:scale-105"
                       >
@@ -376,7 +456,7 @@ const BlogWebsite = () => {
                         Code
                       </a>
                       {project.live && (
-                        <a 
+                        <a
                           href={project.live}
                           className="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 transform hover:scale-105"
                         >
@@ -405,10 +485,10 @@ const BlogWebsite = () => {
               {skills.map((skillGroup, index) => {
                 const IconComponent = skillGroup.icon;
                 return (
-                  <div 
+                  <div
                     key={skillGroup.category}
                     className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    style={{animationDelay: `${index * 200}ms`}}
+                    style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <div className="flex items-center mb-4">
                       <div className="bg-yellow-500 text-black p-2 rounded-lg mr-3 shadow-md">
@@ -418,7 +498,7 @@ const BlogWebsite = () => {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {skillGroup.items.map((skill) => (
-                        <span 
+                        <span
                           key={skill}
                           className="bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full text-sm border border-yellow-600/30 hover:bg-yellow-600/30 transition-colors duration-300"
                         >
@@ -447,12 +527,12 @@ const BlogWebsite = () => {
                 <div>
                   <h3 className="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
                   <p className="text-gray-300 mb-8 leading-relaxed">
-                    I'm always interested in new opportunities and exciting projects. 
+                    I'm always interested in new opportunities and exciting projects.
                     Whether you want to collaborate or just say hello, feel free to reach out!
                   </p>
-                  
+
                   <div className="space-y-4">
-                    <a 
+                    <a
                       href="mailto:mlkmoaz01@gmail.com"
                       className="flex items-center gap-4 text-gray-300 hover:text-yellow-400 transition-colors duration-300 p-3 rounded-lg hover:bg-yellow-500/10"
                     >
@@ -461,7 +541,7 @@ const BlogWebsite = () => {
                       </div>
                       <span>mlkmoaz01@gmail.com</span>
                     </a>
-                    <a 
+                    <a
                       href="tel:+923055865381"
                       className="flex items-center gap-4 text-gray-300 hover:text-yellow-400 transition-colors duration-300 p-3 rounded-lg hover:bg-yellow-500/10"
                     >
@@ -479,13 +559,13 @@ const BlogWebsite = () => {
                   </div>
 
                   <div className="flex gap-6 mt-8">
-                    <a 
+                    <a
                       href="https://github.com/malikmoaz01"
                       className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 transform hover:scale-110"
                     >
                       <Github size={32} />
                     </a>
-                    <a 
+                    <a
                       href="https://linkedin.com/in/malik-moaz-735911247"
                       className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 transform hover:scale-110"
                     >
@@ -497,7 +577,7 @@ const BlogWebsite = () => {
                 <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 p-8 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300">
                   <h3 className="text-xl font-semibold text-white mb-6">Quick Links</h3>
                   <div className="space-y-4">
-                    <a 
+                    <a
                       href="https://leetcode.com/u/mlkmoaz01/"
                       className="block bg-gray-700 hover:bg-gray-600 text-white px-6 py-4 rounded-md transition-all duration-300 transform hover:scale-105 border-l-4 border-yellow-500"
                     >
@@ -507,7 +587,7 @@ const BlogWebsite = () => {
                       </div>
                       <p className="text-gray-400 text-sm mt-1">Problem Solving Excellence</p>
                     </a>
-                    <a 
+                    <a
                       href="https://pucon.vercel.app/"
                       className="block bg-gray-700 hover:bg-gray-600 text-white px-6 py-4 rounded-md transition-all duration-300 transform hover:scale-105 border-l-4 border-yellow-500"
                     >
@@ -517,7 +597,7 @@ const BlogWebsite = () => {
                       </div>
                       <p className="text-gray-400 text-sm mt-1">PUCIT Competition Platform</p>
                     </a>
-                    <a 
+                    <a
                       href="https://github.com/malikmoaz01/Mini-Projects"
                       className="block bg-gray-700 hover:bg-gray-600 text-white px-6 py-4 rounded-md transition-all duration-300 transform hover:scale-105"
                     >
