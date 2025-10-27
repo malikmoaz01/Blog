@@ -94,6 +94,21 @@ const BlogWebsite = () => {
       ],
     },
     {
+      title: "IntroVision-AI",
+      tech: "React.js & FastAPI",
+      description:
+        "Interactive AI Mentor App that gives real-time feedback on your self-introduction. Uses webcam and microphone to analyze clarity, confidence, tone, and engagement — offering mentor-like feedback with GROQ-powered STT and TTS integration.",
+      github: "https://github.com/malikmoaz01/IntroVision-AI",
+      tags: [
+        "WebRTC",
+        "Speech-to-Text",
+        "Text-to-Speech",
+        "NLP",
+        "GROQ API",
+        "AI Feedback",
+      ],
+    },
+    {
       title: "Fashniz",
       tech: "MERN Stack & Flask",
       description:
