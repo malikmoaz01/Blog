@@ -81,7 +81,7 @@ const BlogWebsite = () => {
       description:
         "AI-ready Learning Management System (LMS) built with Next.js and FastAPI. Supports multi-role dashboards (Admin, Teacher, Student), secure authentication, course management, Stripe payments, and Stage 2 AI enhancements including chatbot tutor, auto quiz generation, and smart recommendations.",
       github: "https://github.com/malikmoaz01/Learnify",
-      live: "", // Optional: Add live link if deployed
+      live: "https://learnify.vercel.app/",
       featured: true,
       tags: [
         "Next.js",
@@ -203,12 +203,19 @@ const BlogWebsite = () => {
     },
     {
       category: "Frontend Development",
-      items: ["React", "Nextjs" , "TypeScript", "Tailwind CSS", "Bootstrap", "MUI"],
+      items: [
+        "React",
+        "Nextjs",
+        "TypeScript",
+        "Tailwind CSS",
+        "Bootstrap",
+        "MUI",
+      ],
       icon: Smartphone,
     },
     {
       category: "Backend Development",
-      items: ["Node.js", "Express.js", "Fast Api" , "Flask", "Django"],
+      items: ["Node.js", "Express.js", "Fast Api", "Flask", "Django"],
       icon: Server,
     },
     {
