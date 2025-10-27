@@ -1,9 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Smartphone, Server, Wrench, ShieldCheck, Mail, Phone, MapPin, Code, Brain, Database, Cloud, Star, ExternalLink, Menu, X, Users, Award, Briefcase, TrendingUp, GraduationCap } from 'lucide-react';
-import leader from '../components/1.png'
+import React, { useState, useEffect } from "react";
+import {
+  Github,
+  Linkedin,
+  Smartphone,
+  Server,
+  Wrench,
+  ShieldCheck,
+  Mail,
+  Phone,
+  MapPin,
+  Code,
+  Brain,
+  Database,
+  Cloud,
+  Star,
+  ExternalLink,
+  Menu,
+  X,
+  Users,
+  Award,
+  Briefcase,
+  TrendingUp,
+  GraduationCap,
+} from "lucide-react";
+import leader from "../components/1.png";
 const BlogWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const [isVisible, setIsVisible] = useState({});
   const [clientCount, setClientCount] = useState(0);
   const [projectCount, setProjectCount] = useState(0);
@@ -13,16 +36,16 @@ const BlogWebsite = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible(prev => ({
+          setIsVisible((prev) => ({
             ...prev,
-            [entry.target.id]: entry.isIntersecting
+            [entry.target.id]: entry.isIntersecting,
           }));
         });
       },
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll('section[id]').forEach((section) => {
+    document.querySelectorAll("section[id]").forEach((section) => {
       observer.observe(section);
     });
 
@@ -32,15 +55,15 @@ const BlogWebsite = () => {
   useEffect(() => {
     if (isVisible.about) {
       const clientTimer = setInterval(() => {
-        setClientCount(prev => prev < 25 ? prev + 1 : 25);
+        setClientCount((prev) => (prev < 25 ? prev + 1 : 25));
       }, 80);
 
       const projectTimer = setInterval(() => {
-        setProjectCount(prev => prev < 30 ? prev + 1 : 30);
+        setProjectCount((prev) => (prev < 30 ? prev + 1 : 30));
       }, 60);
 
       const expTimer = setInterval(() => {
-        setExperienceYears(prev => prev < 2 ? prev + 0.1 : 2);
+        setExperienceYears((prev) => (prev < 2 ? prev + 0.1 : 2));
       }, 100);
 
       return () => {
@@ -53,74 +76,99 @@ const BlogWebsite = () => {
 
   const projects = [
     {
+      title: "Learnify",
+      tech: "Next.js & FastAPI",
+      description:
+        "AI-ready Learning Management System (LMS) built with Next.js and FastAPI. Supports multi-role dashboards (Admin, Teacher, Student), secure authentication, course management, Stripe payments, and Stage 2 AI enhancements including chatbot tutor, auto quiz generation, and smart recommendations.",
+      github: "https://github.com/malikmoaz01/Learnify",
+      live: "", // Optional: Add live link if deployed
+      featured: true,
+      tags: [
+        "Next.js",
+        "FastAPI",
+        "LMS",
+        "AI Integration",
+        "Stripe",
+        "Prisma",
+        "TailwindCSS",
+      ],
+    },
+    {
       title: "Fashniz",
       tech: "MERN Stack & Flask",
-      description: "E-commerce platform for clothing with ML-based dynamic pricing and personalized recommendation system. Features admin management panel and user shopping experience with AI-driven suggestions.",
+      description:
+        "E-commerce platform for clothing with ML-based dynamic pricing and personalized recommendation system. Features admin management panel and user shopping experience with AI-driven suggestions.",
       github: "https://github.com/malikmoaz01/Fashnix-FYP",
       live: "https://fashnixx.vercel.app/",
       featured: true,
-      tags: ["Machine Learning", "E-commerce", "React", "Python"]
+      tags: ["Machine Learning", "E-commerce", "React", "Python"],
     },
     {
       title: "HireGenix",
       tech: "MERN Stack & Flask",
-      description: "Skill-based hiring platform connecting job seekers and employers. Features profile creation, skill listing, job recommendations, and candidate shortlisting based on skill matching algorithms.",
+      description:
+        "Skill-based hiring platform connecting job seekers and employers. Features profile creation, skill listing, job recommendations, and candidate shortlisting based on skill matching algorithms.",
       github: "https://github.com/malikmoaz01/hiregenix",
       live: "https://hiregenix.vercel.app/",
-      tags: ["Job Portal", "Skill Matching", "ML", "MERN"]
+      tags: ["Job Portal", "Skill Matching", "ML", "MERN"],
     },
     {
       title: "Face Insight",
       tech: "Django & Deep Learning",
-      description: "Advanced deep learning application for gender & age prediction, skin disease detection (acne, pigmentation, wrinkles). Includes NLP-based suggestions and GPT-2 integration for enhanced recommendations.",
+      description:
+        "Advanced deep learning application for gender & age prediction, skin disease detection (acne, pigmentation, wrinkles). Includes NLP-based suggestions and GPT-2 integration for enhanced recommendations.",
       github: "https://github.com/malikmoaz01/FaceInsight-App",
-      tags: ["Computer Vision", "NLP", "Deep Learning", "Healthcare"]
+      tags: ["Computer Vision", "NLP", "Deep Learning", "Healthcare"],
     },
     {
       title: "E-Restaurant",
       tech: "MERN Stack",
-      description: "Complete restaurant management system with customer service, staff management, financial tracking, inventory control, and marketing features for comprehensive business operations.",
+      description:
+        "Complete restaurant management system with customer service, staff management, financial tracking, inventory control, and marketing features for comprehensive business operations.",
       github: "https://github.com/malikmoaz01/MlkFood",
       live: "https://malikrestuarant.vercel.app/",
-      tags: ["Restaurant Management", "MERN", "Business"]
+      tags: ["Restaurant Management", "MERN", "Business"],
     },
     {
       title: "Recipe Generator",
       tech: "Django & CNN",
-      description: "ML-powered recipe generator using CNNs to analyze dish images and provide recipe suggestions through NLP. Upload an image to get personalized recipe recommendations.",
+      description:
+        "ML-powered recipe generator using CNNs to analyze dish images and provide recipe suggestions through NLP. Upload an image to get personalized recipe recommendations.",
       github: "https://github.com/malikmoaz01/Recipe-Generator",
-      tags: ["Computer Vision", "CNN", "NLP", "Food Tech"]
+      tags: ["Computer Vision", "CNN", "NLP", "Food Tech"],
     },
     {
       title: "Mini Projects Collection",
       tech: "Multiple Technologies",
-      description: "Comprehensive collection including IRS, Video Search Engine, OCR, Translation Agent, Recommendation Systems, Object Detection, Spam Detection, Chatbot, and more.",
+      description:
+        "Comprehensive collection including IRS, Video Search Engine, OCR, Translation Agent, Recommendation Systems, Object Detection, Spam Detection, Chatbot, and more.",
       github: "https://github.com/malikmoaz01/Mini-Projects",
-      tags: ["Various", "ML", "Web Dev", "AI"]
-    }
+      tags: ["Various", "ML", "Web Dev", "AI"],
+    },
   ];
+
   const education = [
     {
       degree: "Bachelor of Science - Software Engineering",
       institution: "Faculty of Computing & Information Technology (PU)",
       period: "Nov 2021 - June 2025",
       location: "Lahore, Punjab, Pakistan",
-      percentage: "81.25%"
+      percentage: "81.25%",
     },
     {
       degree: "FSC - Pre Engineering",
       institution: "PGC Campus 8 (Main)",
       period: "Aug 2019 - Nov 2021",
       location: "Lahore, Punjab, Pakistan",
-      percentage: "99.82%"
+      percentage: "99.82%",
     },
     {
       degree: "Matric - Computer Science",
       institution: "IHSC Chunian",
       period: "Jan 2017 - July 2019",
       location: "Chunian, Pakistan",
-      percentage: "91.91%"
-    }
+      percentage: "91.91%",
+    },
   ];
 
   const certifications = [
@@ -129,76 +177,86 @@ const BlogWebsite = () => {
       provider: "DeepLearning.AI (Coursera)",
       period: "Mar 2024 - June 2024",
       grade: "A+",
-      location: "Palo Alto, California, USA"
+      location: "Palo Alto, California, USA",
     },
     {
       title: "Backend Specialization",
       provider: "Meta (Coursera)",
       period: "May 2023 - Jul 2023",
       grade: "A+",
-      location: "Menlo Park, California, USA"
+      location: "Menlo Park, California, USA",
     },
     {
       title: "Frontend Specialization",
       provider: "Meta (Coursera)",
       period: "Feb 2023 - April 2023",
       grade: "A+",
-      location: "Menlo Park, California, USA"
-    }
+      location: "Menlo Park, California, USA",
+    },
   ];
 
   const skills = [
     {
       category: "Programming Languages",
       items: ["C/C++", "Java", "JavaScript", "Python"],
-      icon: Code
+      icon: Code,
     },
     {
       category: "Frontend Development",
-      items: ["React", "TypeScript", "Tailwind CSS", "Bootstrap", "MUI"],
-      icon: Smartphone
+      items: ["React", "Nextjs" , "TypeScript", "Tailwind CSS", "Bootstrap", "MUI"],
+      icon: Smartphone,
     },
     {
       category: "Backend Development",
-      items: ["Node.js", "Express.js", "Flask", "Django"],
-      icon: Server
+      items: ["Node.js", "Express.js", "Fast Api" , "Flask", "Django"],
+      icon: Server,
     },
     {
       category: "Databases",
       items: ["MySQL", "MongoDB", "Firebase", "PostgreSQL"],
-      icon: Database
+      icon: Database,
     },
     {
       category: "Machine Learning",
       items: ["TensorFlow", "CNN", "RNN", "ANN", "NumPy", "Pandas", "OpenCV"],
-      icon: Brain
+      icon: Brain,
     },
     {
       category: "DevOps & Deployment",
       items: ["Docker", "Railway", "Vercel", "AWS Lambda", "Render"],
-      icon: Cloud
+      icon: Cloud,
     },
     {
       category: "Version Control & Tools",
       items: ["Git", "GitHub", "Figma", "Postman", "VS Code"],
-      icon: Wrench
+      icon: Wrench,
     },
     {
       category: "Cybersecurity Basics",
       items: ["JWT", "OAuth2", "HTTPS", "CORS", "Helmet.js"],
-      icon: ShieldCheck
-    }
+      icon: ShieldCheck,
+    },
   ];
 
   const stats = [
     { icon: Users, label: "Happy Clients", value: clientCount, suffix: "+" },
-    { icon: Briefcase, label: "Projects Completed", value: projectCount, suffix: "+" },
-    { icon: Award, label: "Years Experience", value: experienceYears.toFixed(1), suffix: "" },
-    { icon: TrendingUp, label: "Success Rate", value: "98", suffix: "%" }
+    {
+      icon: Briefcase,
+      label: "Projects Completed",
+      value: projectCount,
+      suffix: "+",
+    },
+    {
+      icon: Award,
+      label: "Years Experience",
+      value: experienceYears.toFixed(1),
+      suffix: "",
+    },
+    { icon: TrendingUp, label: "Success Rate", value: "98", suffix: "%" },
   ];
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setActiveSection(sectionId);
     setIsMenuOpen(false);
   };
@@ -230,16 +288,21 @@ const BlogWebsite = () => {
 
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                {['home', 'about', 'projects', 'skills', 'contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-yellow-500/20 hover:text-yellow-400 ${activeSection === item ? 'text-yellow-400 bg-yellow-500/20 border-b-2 border-yellow-400' : 'text-gray-300'
+                {["home", "about", "projects", "skills", "contact"].map(
+                  (item) => (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(item)}
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-yellow-500/20 hover:text-yellow-400 ${
+                        activeSection === item
+                          ? "text-yellow-400 bg-yellow-500/20 border-b-2 border-yellow-400"
+                          : "text-gray-300"
                       }`}
-                  >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </button>
-                ))}
+                    >
+                      {item.charAt(0).toUpperCase() + item.slice(1)}
+                    </button>
+                  )
+                )}
               </div>
             </div>
 
@@ -257,15 +320,17 @@ const BlogWebsite = () => {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900/95 backdrop-blur-sm">
-                {['home', 'about', 'projects', 'skills', 'contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-yellow-400 hover:bg-yellow-500/20 w-full text-left transition-all duration-300"
-                  >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </button>
-                ))}
+                {["home", "about", "projects", "skills", "contact"].map(
+                  (item) => (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(item)}
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-yellow-400 hover:bg-yellow-500/20 w-full text-left transition-all duration-300"
+                    >
+                      {item.charAt(0).toUpperCase() + item.slice(1)}
+                    </button>
+                  )
+                )}
               </div>
             </div>
           )}
@@ -273,11 +338,20 @@ const BlogWebsite = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-16">
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center pt-16"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Profile Image */}
-            <div className={`flex justify-center lg:justify-start transition-all duration-1000 ${isVisible.home ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
+            <div
+              className={`flex justify-center lg:justify-start transition-all duration-1000 ${
+                isVisible.home
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-10 opacity-0"
+              }`}
+            >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-lg opacity-75 animate-pulse"></div>
                 <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 rounded-full blur-xl opacity-30 animate-spin slow-spin"></div>
@@ -293,7 +367,13 @@ const BlogWebsite = () => {
             </div>
 
             {/* Hero Content */}
-            <div className={`text-center lg:text-left transition-all duration-1000 delay-300 ${isVisible.home ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+            <div
+              className={`text-center lg:text-left transition-all duration-1000 delay-300 ${
+                isVisible.home
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-10 opacity-0"
+              }`}
+            >
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
                   Malik Moaz
@@ -303,8 +383,9 @@ const BlogWebsite = () => {
                 Software Engineer
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
-                Leveraging expertise in Machine Learning and Web Development to create innovative,
-                data-driven applications that enhance user experiences and drive business growth.
+                Leveraging expertise in Machine Learning and Web Development to
+                create innovative, data-driven applications that enhance user
+                experiences and drive business growth.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
@@ -346,15 +427,24 @@ const BlogWebsite = () => {
               return (
                 <div
                   key={stat.label}
-                  className={`text-center transition-all duration-1000 delay-${index * 200} ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                  className={`text-center transition-all duration-1000 delay-${
+                    index * 200
+                  } ${
+                    isVisible.about
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-10 opacity-0"
+                  }`}
                 >
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 text-black rounded-full mb-4 shadow-lg">
                     <IconComponent size={32} />
                   </div>
                   <div className="text-3xl font-bold text-yellow-400 mb-2">
-                    {stat.value}{stat.suffix}
+                    {stat.value}
+                    {stat.suffix}
                   </div>
-                  <div className="text-gray-300 text-sm font-medium">{stat.label}</div>
+                  <div className="text-gray-300 text-sm font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               );
             })}
@@ -365,7 +455,13 @@ const BlogWebsite = () => {
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`transition-all duration-1000 ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible.about
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               About Me
             </h2>
@@ -378,14 +474,23 @@ const BlogWebsite = () => {
                 </h3>
                 <div className="space-y-6">
                   {education.map((edu, index) => (
-                    <div key={index} className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      <h4 className="text-xl font-semibold text-white mb-2">{edu.degree}</h4>
-                      <p className="text-yellow-400 mb-2 font-medium">{edu.institution}</p>
+                    <div
+                      key={index}
+                      className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      <h4 className="text-xl font-semibold text-white mb-2">
+                        {edu.degree}
+                      </h4>
+                      <p className="text-yellow-400 mb-2 font-medium">
+                        {edu.institution}
+                      </p>
                       <p className="text-gray-400 mb-2">{edu.period}</p>
                       <p className="text-gray-400 mb-2">{edu.location}</p>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <p className="text-green-400 font-semibold">Percentage: {edu.percentage}</p>
+                        <p className="text-green-400 font-semibold">
+                          Percentage: {edu.percentage}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -399,14 +504,23 @@ const BlogWebsite = () => {
                 </h3>
                 <div className="space-y-6">
                   {certifications.map((cert, index) => (
-                    <div key={index} className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      <h4 className="text-xl font-semibold text-white mb-2">{cert.title}</h4>
-                      <p className="text-yellow-400 mb-2 font-medium">{cert.provider}</p>
+                    <div
+                      key={index}
+                      className="bg-gray-800/50 p-6 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      <h4 className="text-xl font-semibold text-white mb-2">
+                        {cert.title}
+                      </h4>
+                      <p className="text-yellow-400 mb-2 font-medium">
+                        {cert.provider}
+                      </p>
                       <p className="text-gray-400 mb-2">{cert.period}</p>
                       <p className="text-gray-400 mb-2">{cert.location}</p>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <p className="text-green-400 font-semibold">Grade: {cert.grade}</p>
+                        <p className="text-green-400 font-semibold">
+                          Grade: {cert.grade}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -421,65 +535,133 @@ const BlogWebsite = () => {
 
       <section id="experience" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`transition-all duration-1000 ${isVisible.experience ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible.experience
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               Professional Experience
             </h2>
 
             <div className="space-y-10">
+              {/* TxLabz */}
+              <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Software Engineer
+                </h3>
+                <div className="text-yellow-400 font-medium">
+                  TxLabz · Full-time
+                </div>
+                <div className="text-sm text-gray-400 mb-2">
+                  September 2025 – Present · Lahore, Pakistan
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {[
+                    "Next.js",
+                    "FastAPI",
+                    "MERN",
+                    "FERN",
+                    "PERN",
+                    "LLM Integration",
+                    "NLP",
+                    "Automation",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-300 text-sm">
+                  Building full-stack web applications using modern JavaScript
+                  frameworks and Python backends. Integrating Large Language
+                  Models (LLMs) for intelligent automation, web scraping, and
+                  NLP-driven user interactions. Focused on delivering scalable
+                  solutions that drive business growth and enhance user
+                  engagement.
+                </p>
+              </div>
 
               {/* CureMD */}
               <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
-                <h3 className="text-2xl font-semibold text-white mb-2">Web Bootcamp Intern</h3>
-                <div className="text-yellow-400 font-medium">CureMD · Internship</div>
-                <div className="text-sm text-gray-400 mb-2">July 2025 - Present · Lahore, Punjab, Pakistan</div>
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Backend Developer Intern
+                </h3>
+                <div className="text-yellow-400 font-medium">
+                  CureMD · Internship
+                </div>
+                <div className="text-sm text-gray-400 mb-2">
+                  June 2025 – August 2025 · Lahore, Pakistan
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {["HTML", "CSS", "JavaScript", "Angular" , "ASP.NET MVC", "C#", "Enterprise Apps"].map(skill => (
-                    <span key={skill} className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">
+                  {[
+                    ".NET",
+                    "C#",
+                    "AngularJS",
+                    "Enterprise Systems",
+                    "Agile",
+                    "UI Enhancements",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30"
+                    >
                       {skill}
                     </span>
                   ))}
                 </div>
                 <p className="text-gray-300 text-sm">
-                  Currently working as a Web Bootcamp Intern at CureMD, where I’m gaining hands-on experience in developing enterprise-grade web applications using ASP.NET MVC and C#.
-                  I'm actively involved in front-end and back-end tasks, collaborating with senior developers to learn industry-standard practices for building scalable systems.
+                  Assisted in backend development for enterprise healthcare
+                  applications using the .NET Framework. Enhanced frontend
+                  components in AngularJS and supported agile sprint cycles by
+                  contributing to design improvements and debugging critical
+                  issues.
                 </p>
               </div>
 
-              {/* VAST */}
+              {/* Vast */}
               <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
-                <h3 className="text-2xl font-semibold text-white mb-2">Full Stack Engineer</h3>
-                <div className="text-yellow-400 font-medium">VAST · Part-time</div>
-                <div className="text-sm text-gray-400 mb-2">Jan 2023 - Nov 2024 · Lahore, Punjab, Pakistan · Hybrid</div>
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Junior Full Stack Developer
+                </h3>
+                <div className="text-yellow-400 font-medium">
+                  Vast · Full-time
+                </div>
+                <div className="text-sm text-gray-400 mb-2">
+                  July 2023 – December 2024 · Lahore, Pakistan
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {["MERN Stack", "Django", "MongoDB", "Node.js"].map(skill => (
-                    <span key={skill} className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">
+                  {[
+                    "React.js",
+                    "Node.js",
+                    "Python",
+                    "MongoDB",
+                    "Machine Learning",
+                    "Pandas",
+                    "NumPy",
+                    "scikit-learn",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30"
+                    >
                       {skill}
                     </span>
                   ))}
                 </div>
                 <p className="text-gray-300 text-sm">
-                  Worked on multiple web applications using MERN stack and Django for backend services.
+                  Developed and maintained web applications using React.js for
+                  the frontend and JavaScript/Python for backend services.
+                  Implemented data-driven features with machine learning models
+                  using Pandas, NumPy, and scikit-learn for analytics and
+                  predictions.
                 </p>
               </div>
-
-              {/* UvoCorp */}
-              <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 p-6 hover:shadow-2xl hover:shadow-yellow-500/10">
-                <h3 className="text-2xl font-semibold text-white mb-2">Freelance Full Stack Developer</h3>
-                <div className="text-yellow-400 font-medium">UvoCorp · Freelance</div>
-                <div className="text-sm text-gray-400 mb-2">Aug 2022 - Aug 2023 · Berlin, Germany · Remote</div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["Full Stack", "React", "REST APIs", "MySQL", "Remote Projects"].map(skill => (
-                    <span key={skill} className="bg-yellow-600/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm">
-                  Delivered full-stack freelance projects in international markets with modern technologies and clean code practices.
-                </p>
-              </div>
-
             </div>
           </div>
         </div>
@@ -488,7 +670,13 @@ const BlogWebsite = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible.projects
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               Featured Projects
             </h2>
@@ -497,13 +685,18 @@ const BlogWebsite = () => {
               {projects.map((project, index) => (
                 <div
                   key={project.title}
-                  className={`bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10 ${project.featured ? 'md:col-span-2 lg:col-span-1 ring-2 ring-yellow-500/30' : ''
-                    }`}
+                  className={`bg-gradient-to-br from-gray-800/70 to-gray-900/70 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10 ${
+                    project.featured
+                      ? "md:col-span-2 lg:col-span-1 ring-2 ring-yellow-500/30"
+                      : ""
+                  }`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                      <h3 className="text-xl font-semibold text-white">
+                        {project.title}
+                      </h3>
                       {project.featured && (
                         <div className="bg-yellow-500 text-black p-1 rounded-full">
                           <Star className="fill-current" size={16} />
@@ -513,7 +706,9 @@ const BlogWebsite = () => {
                     <div className="inline-block bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-sm font-medium mb-3 border border-yellow-500/30">
                       {project.tech}
                     </div>
-                    <p className="text-gray-300 mb-6 line-clamp-3">{project.description}</p>
+                    <p className="text-gray-300 mb-6 line-clamp-3">
+                      {project.description}
+                    </p>
 
                     <div className="flex gap-3">
                       <a
@@ -544,7 +739,13 @@ const BlogWebsite = () => {
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`transition-all duration-1000 ${isVisible.skills ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible.skills
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               Skills & Technologies
             </h2>
@@ -562,7 +763,9 @@ const BlogWebsite = () => {
                       <div className="bg-yellow-500 text-black p-2 rounded-lg mr-3 shadow-md">
                         <IconComponent size={24} />
                       </div>
-                      <h3 className="text-xl font-semibold text-white">{skillGroup.category}</h3>
+                      <h3 className="text-xl font-semibold text-white">
+                        {skillGroup.category}
+                      </h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {skillGroup.items.map((skill) => (
@@ -585,7 +788,13 @@ const BlogWebsite = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`transition-all duration-1000 ${isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible.contact
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               Get In Touch
             </h2>
@@ -593,10 +802,13 @@ const BlogWebsite = () => {
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-6">
+                    Let's Connect
+                  </h3>
                   <p className="text-gray-300 mb-8 leading-relaxed">
-                    I'm always interested in new opportunities and exciting projects.
-                    Whether you want to collaborate or just say hello, feel free to reach out!
+                    I'm always interested in new opportunities and exciting
+                    projects. Whether you want to collaborate or just say hello,
+                    feel free to reach out!
                   </p>
 
                   <div className="space-y-4">
@@ -643,7 +855,9 @@ const BlogWebsite = () => {
                 </div>
 
                 <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 p-8 rounded-lg border-2 border-gray-700 hover:border-yellow-400 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-white mb-6">Quick Links</h3>
+                  <h3 className="text-xl font-semibold text-white mb-6">
+                    Quick Links
+                  </h3>
                   <div className="space-y-4">
                     <a
                       href="https://leetcode.com/u/mlkmoaz01/"
@@ -653,7 +867,9 @@ const BlogWebsite = () => {
                         <span className="font-medium">LeetCode Profile</span>
                         <ExternalLink size={16} className="text-yellow-400" />
                       </div>
-                      <p className="text-gray-400 text-sm mt-1">Problem Solving Excellence</p>
+                      <p className="text-gray-400 text-sm mt-1">
+                        Problem Solving Excellence
+                      </p>
                     </a>
                     <a
                       href="https://pucon.vercel.app/"
@@ -663,7 +879,9 @@ const BlogWebsite = () => {
                         <span className="font-medium">PUCON Website</span>
                         <ExternalLink size={16} className="text-yellow-400" />
                       </div>
-                      <p className="text-gray-400 text-sm mt-1">PUCIT Competition Platform</p>
+                      <p className="text-gray-400 text-sm mt-1">
+                        PUCIT Competition Platform
+                      </p>
                     </a>
                     <a
                       href="https://github.com/malikmoaz01/Mini-Projects"
@@ -673,7 +891,9 @@ const BlogWebsite = () => {
                         <span>Mini Projects</span>
                         <ExternalLink size={16} />
                       </div>
-                      <p className="text-gray-400 text-sm mt-1">Collection of Various Projects</p>
+                      <p className="text-gray-400 text-sm mt-1">
+                        Collection of Various Projects
+                      </p>
                     </a>
                   </div>
                 </div>
